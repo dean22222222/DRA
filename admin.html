@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EJSHS Admin</title><link rel="stylesheet" href="style.css"></head>
+<body class="admin-page">
+<div id="login" class="login"><div class="panel"><div class="admin-logo">🎭</div><h1>Admin Panel</h1><p>Enter the admin password to edit the website.</p><input id="password" type="password" placeholder="Password"><button class="btn primary" onclick="login()">Sign In</button><p id="loginMsg"></p><small>This is a browser-only demo. For a real public admin system, use server-side authentication.</small></div></div>
+<div id="dashboard" class="dashboard hidden">
+<header class="dash-head"><div><strong>🎭 EJSHS Admin</strong><span>Website Editor</span></div><div><a class="btn secondary" href="index.html">View Site</a><button class="btn primary" onclick="logout()">Log Out</button></div></header>
+<div class="dash-grid">
+<aside class="sidebar"><button class="side active" onclick="showTab('content',this)">📝 Content</button><button class="side" onclick="showTab('events',this)">📅 Events</button><button class="side" onclick="showTab('settings',this)">⚙️ Settings</button></aside>
+<section class="editor">
+<div id="contentTab" class="tab"><h1>Edit Website</h1><p class="muted">Change text below, then click Save Changes.</p>
+<label>School Name<input id="schoolInput"></label><label>Hero Title<input id="heroTitleInput"></label><label>Hero Description<textarea id="heroTextInput"></textarea></label><label>About Title<input id="aboutTitleInput"></label><label>About Text<textarea id="aboutTextInput"></textarea></label>
+<div class="two"><label>Performing Title<input id="card1TitleInput"></label><label>Performing Text<textarea id="card1TextInput"></textarea></label><label>Tech Title<input id="card2TitleInput"></label><label>Tech Text<textarea id="card2TextInput"></textarea></label><label>Community Title<input id="card3TitleInput"></label><label>Community Text<textarea id="card3TextInput"></textarea></label></div>
+<label>Show Title<input id="showTitleInput"></label><label>Show Description<textarea id="showTextInput"></textarea></label><label>Join Section Text<textarea id="joinTextInput"></textarea></label><button class="btn primary" onclick="saveContent()">Save Changes</button></div>
+<div id="eventsTab" class="tab hidden"><h1>Manage Events</h1><p class="muted">Add, edit, or remove upcoming events.</p><div id="eventEditor"></div><button class="btn secondary" onclick="addEvent()">+ Add Event</button><button class="btn primary" onclick="saveEvents()">Save Events</button></div>
+<div id="settingsTab" class="tab hidden"><h1>Settings</h1><label>Contact Email<input id="emailInput" type="email"></label><label>Admin Password<input id="newPassword" type="password" placeholder="Leave blank to keep current"></label><button class="btn primary" onclick="saveSettings()">Save Settings</button><div class="notice">⚠️ The password and content are stored in this browser's local storage. This is suitable for a local/demo site, not a secure public admin system.</div></div>
+</section></div></div>
+<script src="admin.js"></script></body></html>
